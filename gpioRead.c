@@ -37,18 +37,13 @@ int main(int argc, char **argv, char **envp)
 	int gpio;
 	int value;
 
-	char *buf[MAX_BUF];
-	unsigned int gpio;
-	int len;
-	int rq, al, rv = -1;
-
-
 
 	if (argc < 2) {
 		printf("Usage: gpioRead <gpio>\n\n");
 		printf("Reads the input value of the specified GPIO pin once a second for 20 seconds\n");
 		exit(-1);
 	}
+
 
 	gpio = atoi(argv[1]);
 
@@ -93,7 +88,7 @@ int main(int argc, char **argv, char **envp)
 			perror("gpio_free");
 		}
 	}
-	
+
 	return 0;
 }
 
