@@ -32,6 +32,7 @@ int main(int argc, char **argv, char **envp)
 	}
 	// export the gpio
 	if (!rq) {
+		printf("> exporting gpio\n");
 		if ((rv = gpio_request(gpio, NULL)) < 0)
 		{
 			perror("gpio_request");
@@ -40,6 +41,7 @@ int main(int argc, char **argv, char **envp)
 	}
 
 	// set to input direction
+	printf("> setting to input\n");
 	if ((rv = gpio_direction_input(gpio)) < 0)
 	{
 		perror("gpio_direction_input");
@@ -60,6 +62,7 @@ int main(int argc, char **argv, char **envp)
 
 	// unexport the gpio
 	if (!rq) {
+		printf("> unexporting gpio\n");
 		if (gpio_free(gpio) < 0)
 		{
 			perror("gpio_free");
