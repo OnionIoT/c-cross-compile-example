@@ -33,7 +33,7 @@ int gpio_fd_open(unsigned int gpio)
 int main(int argc, char **argv, char **envp)
 {
 	int i;
-	int status;
+	int rq, rv;
 	int gpio;
 	int value;
 
