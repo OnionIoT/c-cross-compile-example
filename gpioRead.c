@@ -5,31 +5,8 @@
 #include <fcntl.h>
 
 #include <ugpio/ugpio.h>
- 
-#define SYSFS_GPIO_DIR "/sys/class/gpio"
-#define MAX_BUF 64
 
- /****************************************************************
- * gpio_fd_open
- ****************************************************************/
 
-int gpio_fd_open(unsigned int gpio)
-{
-	int fd, len;
-	char buf[MAX_BUF];
-
-	len = snprintf(buf, sizeof(buf), SYSFS_GPIO_DIR "/gpio%d/value", gpio);
- 
-	fd = open(buf, O_RDONLY | O_NONBLOCK );
-	if (fd < 0) {
-		perror("gpio/fd_open");
-	}
-	return fd;
-}
-
-/****************************************************************
- * Main
- ****************************************************************/
 int main(int argc, char **argv, char **envp)
 {
 	int i;
