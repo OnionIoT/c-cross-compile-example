@@ -50,6 +50,8 @@ done
 if [ "$BUILDROOT_PATH" = "" ]
 then
 	echo "ERROR: missing path to buildroot"
+	echo ""
+	usage
 	exit
 fi
 
@@ -63,7 +65,7 @@ STAGING_DIR_RELATIVE="staging_dir"
 TOOLCHAIN_RELATIVE="$STAGING_DIR_RELATIVE/$TOOLCHAIN_NAME"
 TARGET_RELATIVE="$STAGING_DIR_RELATIVE/$TARGET_NAME"
 
-# define the toolchain paths 
+# define the toolchain paths
 TOOLCHAIN="$BUILDROOT_PATH/$TOOLCHAIN_RELATIVE"
 TOOLCHAIN_BIN="$BUILDROOT_PATH/$TOOLCHAIN_RELATIVE/bin"
 
@@ -115,7 +117,7 @@ fi
 
 
 # first run make clean
-make clean 
+make clean
 
 # run the make command
 make \
