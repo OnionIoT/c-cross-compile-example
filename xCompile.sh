@@ -55,8 +55,8 @@ fi
 
 
 # define the toolchain and target names
-TOOLCHAIN_NAME="toolchain-mipsel_24kc_gcc-5.4.0_musl"
-TARGET_NAME="target-mipsel_24kc_musl"
+TOOLCHAIN_NAME="toolchain-mipsel_24kc_gcc-5.4.0_musl-1.1.16"
+TARGET_NAME="target-mipsel_24kc_musl-1.1.16"
 
 # define the relative paths
 STAGING_DIR_RELATIVE="staging_dir"
