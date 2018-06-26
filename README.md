@@ -11,6 +11,10 @@ This cannot be compiled directly on the Omega since the header files for librari
 
 See the [Cross Compiling for the Omega](https://docs.onion.io/omega2-docs/cross-compiling.html) article in the [Onion Docs](https://docs.onion.io).
 
+Or watch our [video tutorial on C Programs and Cross Compiling for the Omega2](https://www.youtube.com/watch?v=VOs75UsGe_o):
+
+[![](https://onion.io/wp-content/uploads/2018/06/cross-compiling-cover.png)](https://www.youtube.com/watch?v=VOs75UsGe_o)
+
 ## Usage and Example Output
 
 Usage:
