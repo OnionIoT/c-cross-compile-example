@@ -44,6 +44,24 @@ Compiling C program
 /root/source//staging_dir/toolchain-mipsel_24kc_gcc-5.4.0_musl-1.1.16/bin/mipsel-openwrt-linux-gcc -Os -pipe -mno-branch-likely -mips32r2 -mtune=24kc -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -msoft-float -mips16 -minterlink-mips16 -Wformat -Werror=format-security -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro -I /root/source//staging_dir/toolchain-mipsel_24kc_gcc-5.4.0_musl-1.1.16/usr/include -I /root/source//staging_dir/toolchain-mipsel_24kc_gcc-5.4.0_musl-1.1.16/include -I /root/source//staging_dir/target-mipsel_24kc_musl-1.1.16/usr/include -I /root/source//staging_dir/target-mipsel_24kc_musl-1.1.16/include gpioRead.c -o gpioRead -L/root/source//staging_dir/toolchain-mipsel_24kc_gcc-5.4.0_musl-1.1.16/usr/lib -L/root/source//staging_dir/toolchain-mipsel_24kc_gcc-5.4.0_musl-1.1.16/lib -L/root/source//staging_dir/target-mipsel_24kc_musl-1.1.16/usr/lib -L/root/source//staging_dir/target-mipsel_24kc_musl-1.1.16/lib -lugpio
 ```
 
+## Additional Usage Info
+
+### What if I want to cross compile without any libraries?
+
+1. Modify line 10 in the Makefile to remove the `-l$(LIB)`
+2. Run the xCompile.sh script without the -lib argument
+
+### What if I want to cross compile with additional libraries?
+
+Add the additional libraries to the `-lib` argument input. Just remember to surround the input with quotes, and to add `-l` to each library after the first one.
+
+For example, say you wanted to use xCompile and link the ugpio, oniondebug, and onioni2c libraries. The command would look like this: 
+
+```
+sh xCompile.sh -buildroot /home/ubuntu/source -lib "ugpio -loniondebug -lonioni2c"
+```
+
+
 ## Background Info
 
 * The `gpioRead.c` program uses the `ugpio` library
